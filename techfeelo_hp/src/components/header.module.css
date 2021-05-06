@@ -1,10 +1,22 @@
+.menuBar{
+  align-items: right;
+}
+
 .button {
-  min-width: 64px;
-  line-height: 32px;
-  border-radius: 4px;
-  border: none;
-  padding: 0 16px;
-  color: #ffffff;
-  background: #333333;
   font-size: large;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 0 #748ffc, 0 3rem 0 #fff;
+  transition: text-shadow 200ms;
+  vertical-align: bottom;
+}
+.button:hover {
+  text-shadow: 0 -3rem 0 #000000, 0 0 0 #000000;
+}
+.buttonText {
+  margin: 0 0 12px 0;
+  padding: 0;
 }

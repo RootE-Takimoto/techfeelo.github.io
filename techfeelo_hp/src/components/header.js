@@ -19,7 +19,7 @@ const Header = ({ siteTitle }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <h1 style={{ margin: 0}}>
         <Link to="/">
           <StaticImage
             src="../images/techfeelo_logo.png"
@@ -28,10 +28,12 @@ const Header = ({ siteTitle }) => (
           />
           {/*{siteTitle}*/}
         </Link>
-        <Link className={Styles.button} to="/about/">法人について</Link>
-        <Link className={Styles.button} to="/info/">お知らせ</Link>
-        <Link className={Styles.button} to="/report/">活動報告</Link>
-        <Link className={Styles.button} to="/contact/">お問い合わせ</Link>
+        <a className={Styles.menuBar} style={{ margin: 0, display: "inline-block"}}>
+          <Link className={Styles.button} to="/about/">法人について</Link>
+          <Link className={Styles.button} to="/info/">お知らせ</Link>
+          <Link className={Styles.button} to="/report/">活動報告</Link>
+          <Link className={Styles.button} to="/contact/">お問い合わせ</Link>
+        </a>
       </h1>
     </div>
   </header>
