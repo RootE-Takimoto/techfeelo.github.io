@@ -28,11 +28,11 @@ const Header = ({ siteTitle }) => (
           />
           {/*{siteTitle}*/}
         </Link>
+        <Link className={Styles.button} to="/about/">法人について</Link>
+        <Link className={Styles.button} to="/info/">お知らせ</Link>
+        <Link className={Styles.button} to="/report/">活動報告</Link>
+        <Link className={Styles.button} to="/contact/">お問い合わせ</Link>
       </h1>
-      <h2 className={Styles.button}>
-        <Link to="/about/">about</Link>
-        <Link to="/officers/">役員紹介</Link>
-      </h2>
     </div>
   </header>
 )
