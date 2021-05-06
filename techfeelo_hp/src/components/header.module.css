@@ -1,5 +1,5 @@
 .menuBar{
-  align-items: right;
+  
 }
 
 .button {
@@ -15,8 +15,4 @@
 }
 .button:hover {
   text-shadow: 0 -3rem 0 #000000, 0 0 0 #000000;
-}
-.buttonText {
-  margin: 0 0 12px 0;
-  padding: 0;
 }
