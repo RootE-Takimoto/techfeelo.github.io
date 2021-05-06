@@ -1,11 +1,14 @@
-import * as React from "react"
+//import * as React from "react"
+import React from "react"//←「*」の部分を削除
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
+import * as Styles  from './header.module.css'
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `steelblue`,
+      background: `aliceblue`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -17,16 +20,19 @@ const Header = ({ siteTitle }) => (
       }}
     >
       <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+        <Link to="/">
+          <StaticImage
+            src="../images/techfeelo_logo.png"
+            width={300}
+            alt="techfeelo"
+          />
+          {/*{siteTitle}*/}
         </Link>
       </h1>
+      <h2 className={Styles.button}>
+        <Link to="/about/">about</Link>
+        <Link to="/officers/">役員紹介</Link>
+      </h2>
     </div>
   </header>
 )
