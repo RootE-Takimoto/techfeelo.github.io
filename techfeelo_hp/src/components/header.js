@@ -3,7 +3,7 @@ import React from "react"//←「*」の部分を削除
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import * as Styles  from './header.module.css'
+import * as Styles from './header.module.css'
 
 const Header = ({ siteTitle }) => (
   <header
@@ -19,7 +19,7 @@ const Header = ({ siteTitle }) => (
       }}
     >
       <div>
-        <div style={{ width:"20%", display:"inline-block" }}>
+        <div style={{ width: "20%", display: "inline-block" }}>
           <Link to="/">
             <StaticImage
               src="../images/techfeelo_logo.png"
