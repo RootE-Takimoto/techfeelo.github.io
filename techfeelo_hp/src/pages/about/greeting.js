@@ -7,9 +7,8 @@ import Seo from "../../components/seo"
 const AboutPage = () => (
   <Layout>
     <Seo title="Greeting" />
-    <h1>理事挨拶</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <h1>代表理事挨拶</h1>
+    <p>代表理事のHarukaからのご挨拶です。</p>
   </Layout>
 )
 

@@ -24,7 +24,7 @@
 
 .button {
   padding: 0 1rem 0 1rem; /* 上 | 右 | 下 | 左 */
-  font-size: medium;
+  font-size: 0.9rem;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;

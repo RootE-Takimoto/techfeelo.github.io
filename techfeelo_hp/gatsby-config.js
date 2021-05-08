@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-sass`,
+    `gatsby-theme-material-ui`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
