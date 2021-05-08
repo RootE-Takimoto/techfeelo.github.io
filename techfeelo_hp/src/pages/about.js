@@ -20,7 +20,7 @@ const AboutPage = () => (
       }}
     >
     <AboutCard
-      title="団体概要"
+      title="法人概要"
       explanation="hogehoge"
       link="/about/overview"
     />

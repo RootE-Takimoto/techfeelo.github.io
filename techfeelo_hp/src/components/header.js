@@ -15,10 +15,28 @@ import { useState, useEffect } from "react";
 import { StaticImage } from "gatsby-plugin-image"
 import { Link as RouterLink, MemoryRouter as Router } from "react-router-dom";
 
+import HeaderMenu from './header/header-tab-menu.js'
+
+const nestData = [
+  {
+    label: "法人概要",
+    href: "/about/overview",
+  },
+  {
+    label: "代表理事挨拶",
+    href: "/about/greeting",
+  },
+  {
+    label: "役員紹介",
+    href: "/about/officers",
+  },
+];
+
 const headersData = [
   {
-    label: "団体について",
+    label: "techfeeloとは",
     href: "/about",
+    nest: { nestData },
   },
   {
     label: "お知らせ",
@@ -131,13 +149,13 @@ export default function Header() {
 
   const getDrawerChoices = () => {
     const preventDefault = (event) => event.preventDefault();
-    return headersData.map(({ label, href }) => {
+    return headersData.map(({ label, href, nest }) => {
       return (
         <Link
           href={href} //onClick={preventDefault}
           {...{
-          //   component: RouterLink,
-          //   to: href,
+            //   component: RouterLink,
+            //   to: href,
             color: "inherit",
             style: { textDecoration: "none" },
             key: label,
@@ -150,7 +168,7 @@ export default function Header() {
   };
 
   const techfeeloLogo = (
-    <div style={{ minWidth: "200", width: "20%", margin: "0.5rem" }}>
+    <div style={{ minWidth: "7rem", width: "20%", margin: "0.5rem" }}>
       <StaticImage
         src="../images/techfeelo_logo.png"
         minWidth={200}
@@ -163,7 +181,7 @@ export default function Header() {
   );
 
   const getMenuButtons = () => {
-    return headersData.map(({ label, href }) => {
+    return headersData.map(({ label, href, nest }) => {
       return (
         <Button href={href} color="primary">
           {label}
