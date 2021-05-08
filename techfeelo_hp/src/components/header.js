@@ -16,6 +16,8 @@ import { StaticImage } from "gatsby-plugin-image"
 import { Link as RouterLink, MemoryRouter as Router } from "react-router-dom";
 
 import HeaderMenu from './header/header-tab-menu.js'
+import { Box } from "@material-ui/core";
+import { ButtonGroup } from "@material-ui/core";
 
 const nestData = [
   {
@@ -107,7 +109,21 @@ export default function Header() {
     return (
       <Toolbar className={toolbar}>
         {techfeeloLogo}
-        <div>{getMenuButtons()}</div>
+        {/* <div>{getMenuButtons()}</div> */}
+        <ButtonGroup>
+          <Button href={"/about"} color="primary">
+            techfeeloとは
+          </Button>
+          <Button href={"/info"} color="primary">
+            お知らせ
+          </Button>
+          <Button href={"/report"} color="primary">
+            活動報告
+          </Button>
+          <Button href={"/contact"} color="primary">
+            お問い合わせ
+          </Button>
+        </ButtonGroup>
       </Toolbar>
     );
   };
@@ -139,7 +155,7 @@ export default function Header() {
             onClose: handleDrawerClose,
           }}
         >
-          <div className={drawerContainer}>{getDrawerChoices()}</div>
+          <div className={drawerContainer}>{getDrawerChoices()}</div> {/* ここをベタ打ち（関数使わないで書く→そのあと役員紹介など下位構造を追加/Split buttonかなんか使うと良さげ…？） */}
         </Drawer>
 
         <div>{techfeeloLogo}</div>
@@ -180,15 +196,15 @@ export default function Header() {
     // </Typography>
   );
 
-  const getMenuButtons = () => {
-    return headersData.map(({ label, href, nest }) => {
-      return (
-        <Button href={href} color="primary">
-          {label}
-        </Button>
-      );
-    });
-  };
+  // const getMenuButtons = () => {
+  //   return headersData.map(({ label, href, nest }) => {
+  //     return (
+  //       <Button href={href} color="primary">
+  //         {label}
+  //       </Button>
+  //     );
+  //   });
+  // };
 
   return (
     <header>
