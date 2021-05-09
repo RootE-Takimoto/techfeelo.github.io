@@ -53,10 +53,6 @@ const useStyles = makeStyles({
 
 export default function SimpleCard(prop) {
     const classes = useStyles();
-    // const bull = <span className={classes.bullet}>•</span>;
-    //   const position = "理事";
-    //   const name = "hoge";
-
     return (
         <Card className={classes.root}>
             <CardMedia

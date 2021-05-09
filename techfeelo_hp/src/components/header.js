@@ -1,31 +1,14 @@
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  makeStyles,
-  Button,
-  IconButton,
-  Drawer,
-  // Link,
-  MenuItem,
-} from "@material-ui/core";
+import { AppBar, Toolbar, makeStyles, Button, IconButton, Drawer, MenuItem } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import * as React from "react"
 import { useState, useEffect } from "react";
 import { StaticImage } from "gatsby-plugin-image"
-import { Link as RouterLink, MemoryRouter as Router } from "react-router-dom";
 
 import { Link } from "gatsby"
 
 import Menu from 'material-ui-popup-state/HoverMenu'
-import {
-  usePopupState,
-  bindHover,
-  bindMenu,
-} from 'material-ui-popup-state/hooks'
+import { usePopupState, bindHover, bindMenu } from 'material-ui-popup-state/hooks'
 
-// import HeaderMenu from './header/header-tab-menu.js'
-import { Box } from "@material-ui/core";
 import { ButtonGroup } from "@material-ui/core";
 import HeaderMenu from './header/header-about-sub.js'
 
@@ -135,49 +118,12 @@ export default function Header() {
           }}
         >
           <HeaderMenu />
-          {/* <List>
-            <ListItem button component={Link} to={"/info"} color="primary">お知らせ</ListItem>
-          </List> */}
-          {/* <ButtonGroup orientation="vertical">
-            <HeaderMenu />
-            <Button href={"/info"} color="primary">
-              お知らせ
-            </Button>
-            <Button href={"/report"} color="primary">
-              活動報告
-            </Button>
-            <Button href={"/contact"} color="primary">
-              お問い合わせ
-            </Button>
-          </ButtonGroup> */}
-          {/* <div className={drawerContainer}>{getDrawerChoices()}</div>  */}
-          {/* ここをベタ打ち（関数使わないで書く→そのあと役員紹介など下位構造を追加/Split buttonかなんか使うと良さげ…？） */}
         </Drawer>
 
         <div>{techfeeloLogo}</div>
       </Toolbar>
     );
   };
-
-  // const getDrawerChoices = () => {
-  //   const preventDefault = (event) => event.preventDefault();
-  //   return headersData.map(({ label, href, nest }) => {
-  //     return (
-  //       <Link
-  //         href={href} //onClick={preventDefault}
-  //         {...{
-  //           //   component: RouterLink,
-  //           //   to: href,
-  //           color: "inherit",
-  //           style: { textDecoration: "none" },
-  //           key: label,
-  //         }}
-  //       >
-  //         <MenuItem>{label}</MenuItem>
-  //       </Link>
-  //     );
-  //   });
-  // };
 
   const techfeeloLogo = (
     <div style={{ minWidth: "7rem", width: "20%", margin: "0.5rem" }}>
@@ -187,20 +133,7 @@ export default function Header() {
         alt="techfeelo"
       />
     </div>
-    // <Typography variant="h6" component="h1" className={logo}>
-    //   Femmecubator
-    // </Typography>
   );
-
-  // const getMenuButtons = () => {
-  //   return headersData.map(({ label, href, nest }) => {
-  //     return (
-  //       <Button href={href} color="primary">
-  //         {label}
-  //       </Button>
-  //     );
-  //   });
-  // };
 
   return (
     <header>
@@ -210,79 +143,3 @@ export default function Header() {
     </header>
   );
 }
-
-// //import * as React from "react"
-// import React from "react"//←「*」の部分を削除
-// import PropTypes from "prop-types"
-// import { Link } from "gatsby"
-// import { StaticImage } from "gatsby-plugin-image"
-// import * as Styles from './header.module.css'
-
-
-// import Button from '@material-ui/core/Button';
-// import { MuiThemeProvider } from '@material-ui/core/styles';
-// import { theme } from "../components/material-ui-color";
-
-// import HeaderNav from './header/header-nav.js'
-// import HeaderMenu from './header/header-tab-menu.js'
-
-// const Header = ({ siteTitle }) => (
-//   <header
-//     style={{
-//       background: `aliceblue`,
-//       padding: "0",
-//       marginBottom: `1.45rem`,
-//     }}
-//   >
-//     <div
-//       style={{
-//         // margin: `0 auto`, /* 上下 | 左右 */
-//         padding: `1.45rem 5% 0.5rem 2rem`, /* 上 | 右 | 下 | 左 */
-//       }}
-//     >
-//       <div>
-//         <div style={{ width: "20%", display: "inline-block" }}>
-//           <Link to="/">
-//             <StaticImage
-//               src="../images/techfeelo_logo.png"
-//               // maxWidth={200}
-//               alt="techfeelo"
-//             />
-//           </Link>
-//         </div>
-//         <nav className={Styles.nav}>
-//           <ul className={Styles.menuBar}>
-
-//             <li className={Styles.li}>
-//               <HeaderMenu
-//                 title="法人について"
-//                 sub1="概要"
-//                 sub1Link="/about/overview"
-//                 sub2="理事挨拶"
-//                 sub2Link="/about/greeting"
-//                 sub3="役員紹介"
-//                 sub3Link="/about/officers"
-//               />
-//             </li>
-//             <li className={Styles.li}><Button href="/info">お知らせ</Button></li>
-//             <li className={Styles.li}><Button href="/report">活動報告</Button></li>
-//             <li className={Styles.li}><Button href="/contact">お問い合わせ</Button></li>
-//             {/* <li className={Styles.li}><Link className={Styles.button} to="/about/">お知らせ</Link></li>
-//             <li className={Styles.li}><Link className={Styles.button} to="/report/">活動報告</Link></li>
-//             <li className={Styles.li}><Link className={Styles.button} to="/contact/">お問い合わせ</Link></li> */}
-//           </ul>
-//         </nav>
-//       </div>
-//     </div>
-//   </header>
-// )
-
-// Header.propTypes = {
-//   siteTitle: PropTypes.string,
-// }
-
-// Header.defaultProps = {
-//   siteTitle: ``,
-// }
-
-// export default Header
