@@ -76,15 +76,9 @@ export default function Header() {
             <MenuItem onClick={popupState.close} component={Link} to="/about/greeting">代表理事挨拶</MenuItem>
             <MenuItem onClick={popupState.close} component={Link} to="/about/officers">役員紹介</MenuItem>
           </Menu>
-          <Button href={"/info"} color="primary">
-            お知らせ
-          </Button>
-          <Button href={"/report"} color="primary">
-            活動報告
-          </Button>
-          <Button href={"/contact"} color="primary">
-            お問い合わせ
-          </Button>
+          <Button href={"/info"} color="primary">お知らせ</Button>
+          <Button href={"/report"} color="primary">活動報告</Button>
+          <Button href={"/contact"} color="primary">お問い合わせ</Button>
         </ButtonGroup>
       </Toolbar>
     );
@@ -127,11 +121,13 @@ export default function Header() {
 
   const techfeeloLogo = (
     <div style={{ minWidth: "7rem", width: "20%", margin: "0.5rem" }}>
-      <StaticImage
-        src="../images/techfeelo_logo.png"
-        minWidth={200}
-        alt="techfeelo"
-      />
+      <Link to="/">
+        <StaticImage
+          src="../images/techfeelo_logo.png"
+          minWidth={200}
+          alt="techfeelo"
+        />
+      </Link>
     </div>
   );
 
