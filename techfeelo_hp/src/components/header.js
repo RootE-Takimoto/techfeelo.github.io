@@ -10,9 +10,14 @@ import Menu from 'material-ui-popup-state/HoverMenu'
 import { usePopupState, bindHover, bindMenu } from 'material-ui-popup-state/hooks'
 
 import { ButtonGroup } from "@material-ui/core";
-import HeaderMenu from './header/header-about-sub.js'
 
-const useStyles = makeStyles(() => ({
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Collapse from '@material-ui/core/Collapse';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+
+const useStyles = makeStyles((theme) => ({
   header: {
     backgroundColor: "#ffffff",
     paddingRight: "10%",
@@ -33,10 +38,18 @@ const useStyles = makeStyles(() => ({
   drawerContainer: {
     padding: "1rem 1rem",
   },
+  root: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
+  nested: {
+    paddingLeft: theme.spacing(4),
+  },
 }));
 
 export default function Header() {
-  const { header, logo, menuButton, toolbar, drawerContainer } = useStyles();
+  const { header, logo, menuButton, toolbar, drawerContainer, root, nested } = useStyles();
 
   const [state, setState] = useState({
     mobileView: false,
@@ -84,6 +97,12 @@ export default function Header() {
     );
   };
 
+  const [open, setOpen] = React.useState(true);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
   const displayMobile = () => {
     const handleDrawerOpen = () =>
       setState((prevState) => ({ ...prevState, drawerOpen: true }));
@@ -111,7 +130,25 @@ export default function Header() {
             onClose: handleDrawerClose,
           }}
         >
-          <HeaderMenu />
+          <List
+            component="nav"
+            aria-labelledby="nested-list-subheader"
+            className={root}
+          >
+            <ListItem button onClick={handleClick}>
+              techfeeloとは
+              {open ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItem button className={nested} component={Link} to={"/about/overview"} color="primary" onClick={handleDrawerClose}>法人概要</ListItem>
+                <ListItem button className={nested} component={Link} to={"/about/greeting"} color="primary" onClick={handleDrawerClose}>代表理事挨拶</ListItem>
+                <ListItem button className={nested} component={Link} to={"/about/officers"} color="primary" onClick={handleDrawerClose}>役員紹介</ListItem>
+              </List>
+            </Collapse>
+            <ListItem button component={Link} to={"/info"} color="primary" onClick={handleDrawerClose}>お知らせ</ListItem>
+            <ListItem button component={Link} to={"/report"} color="primary" onClick={handleDrawerClose}>活動報告</ListItem>
+          </List>
         </Drawer>
 
         <div>{techfeeloLogo}</div>
