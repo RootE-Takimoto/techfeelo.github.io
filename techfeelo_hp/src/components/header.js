@@ -6,7 +6,7 @@ import {
   Button,
   IconButton,
   Drawer,
-  Link,
+  // Link,
   MenuItem,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -15,44 +15,19 @@ import { useState, useEffect } from "react";
 import { StaticImage } from "gatsby-plugin-image"
 import { Link as RouterLink, MemoryRouter as Router } from "react-router-dom";
 
-import HeaderMenu from './header/header-tab-menu.js'
+import { Link } from "gatsby"
+
+import Menu from 'material-ui-popup-state/HoverMenu'
+import {
+  usePopupState,
+  bindHover,
+  bindMenu,
+} from 'material-ui-popup-state/hooks'
+
+// import HeaderMenu from './header/header-tab-menu.js'
 import { Box } from "@material-ui/core";
 import { ButtonGroup } from "@material-ui/core";
-
-const nestData = [
-  {
-    label: "法人概要",
-    href: "/about/overview",
-  },
-  {
-    label: "代表理事挨拶",
-    href: "/about/greeting",
-  },
-  {
-    label: "役員紹介",
-    href: "/about/officers",
-  },
-];
-
-const headersData = [
-  {
-    label: "techfeeloとは",
-    href: "/about",
-    nest: { nestData },
-  },
-  {
-    label: "お知らせ",
-    href: "/info",
-  },
-  {
-    label: "活動報告",
-    href: "/report",
-  },
-  {
-    label: "お問い合わせ",
-    href: "/contact",
-  },
-];
+import HeaderMenu from './header/header-about-sub.js'
 
 const useStyles = makeStyles(() => ({
   header: {
@@ -63,12 +38,6 @@ const useStyles = makeStyles(() => ({
       paddingLeft: 0,
     },
   },
-  // logo: {
-  //   fontFamily: "Work Sans, sans-serif",
-  //   fontWeight: 600,
-  //   color: "#FFFEFE",
-  //   textAlign: "left",
-  // },
   menuButton: {
     fontWeight: 700,
     size: "1rem",
@@ -105,15 +74,25 @@ export default function Header() {
     window.addEventListener("resize", () => setResponsiveness());
   }, []);
 
+  const popupState = usePopupState({ variant: 'popover', popupId: 'demoMenu' })
   const displayDesktop = () => {
     return (
       <Toolbar className={toolbar}>
         {techfeeloLogo}
-        {/* <div>{getMenuButtons()}</div> */}
         <ButtonGroup>
-          <Button href={"/about"} color="primary">
+          <Button variant="contained" {...bindHover(popupState)} href={"/about"} color="primary">
             techfeeloとは
           </Button>
+          <Menu
+            {...bindMenu(popupState)}
+            getContentAnchorEl={null}
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+            transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+          >
+            <MenuItem onClick={popupState.close} component={Link} to="/about/overview">法人概要</MenuItem>
+            <MenuItem onClick={popupState.close} component={Link} to="/about/greeting">代表理事挨拶</MenuItem>
+            <MenuItem onClick={popupState.close} component={Link} to="/about/officers">役員紹介</MenuItem>
+          </Menu>
           <Button href={"/info"} color="primary">
             お知らせ
           </Button>
@@ -155,7 +134,24 @@ export default function Header() {
             onClose: handleDrawerClose,
           }}
         >
-          <div className={drawerContainer}>{getDrawerChoices()}</div> {/* ここをベタ打ち（関数使わないで書く→そのあと役員紹介など下位構造を追加/Split buttonかなんか使うと良さげ…？） */}
+          <HeaderMenu />
+          {/* <List>
+            <ListItem button component={Link} to={"/info"} color="primary">お知らせ</ListItem>
+          </List> */}
+          {/* <ButtonGroup orientation="vertical">
+            <HeaderMenu />
+            <Button href={"/info"} color="primary">
+              お知らせ
+            </Button>
+            <Button href={"/report"} color="primary">
+              活動報告
+            </Button>
+            <Button href={"/contact"} color="primary">
+              お問い合わせ
+            </Button>
+          </ButtonGroup> */}
+          {/* <div className={drawerContainer}>{getDrawerChoices()}</div>  */}
+          {/* ここをベタ打ち（関数使わないで書く→そのあと役員紹介など下位構造を追加/Split buttonかなんか使うと良さげ…？） */}
         </Drawer>
 
         <div>{techfeeloLogo}</div>
@@ -163,25 +159,25 @@ export default function Header() {
     );
   };
 
-  const getDrawerChoices = () => {
-    const preventDefault = (event) => event.preventDefault();
-    return headersData.map(({ label, href, nest }) => {
-      return (
-        <Link
-          href={href} //onClick={preventDefault}
-          {...{
-            //   component: RouterLink,
-            //   to: href,
-            color: "inherit",
-            style: { textDecoration: "none" },
-            key: label,
-          }}
-        >
-          <MenuItem>{label}</MenuItem>
-        </Link>
-      );
-    });
-  };
+  // const getDrawerChoices = () => {
+  //   const preventDefault = (event) => event.preventDefault();
+  //   return headersData.map(({ label, href, nest }) => {
+  //     return (
+  //       <Link
+  //         href={href} //onClick={preventDefault}
+  //         {...{
+  //           //   component: RouterLink,
+  //           //   to: href,
+  //           color: "inherit",
+  //           style: { textDecoration: "none" },
+  //           key: label,
+  //         }}
+  //       >
+  //         <MenuItem>{label}</MenuItem>
+  //       </Link>
+  //     );
+  //   });
+  // };
 
   const techfeeloLogo = (
     <div style={{ minWidth: "7rem", width: "20%", margin: "0.5rem" }}>
