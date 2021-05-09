@@ -15,6 +15,7 @@ import Header from "./header"
 import Footer from './footer'
 
 import "./layout.css"
+import { red } from "@material-ui/core/colors";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -26,7 +27,7 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  
+
   return (
     <div>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
@@ -38,6 +39,13 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
+      </div>
+      <div
+        style={{
+          margin: `0 auto 1rem`,/* 上 | 左右 | 下 */
+          maxWidth: 960,
+        }}
+      >
         <Footer />
       </div>
     </div>
