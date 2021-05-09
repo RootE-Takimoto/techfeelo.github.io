@@ -27,26 +27,6 @@ const useStyles = makeStyles({
     pos: {
         marginBottom: 12,
     },
-    header: {
-        backgroundColor: "#000000",
-        paddingRight: "10%",
-        paddingLeft: "5%",
-        "@media (max-width: 900px)": {
-            paddingLeft: 0,
-        },
-    },
-    menuButton: {
-        fontWeight: 700,
-        size: "1rem",
-        marginLeft: "2rem",
-    },
-    toolbar: {
-        display: "flex",
-        justifyContent: "space-between",
-    },
-    drawerContainer: {
-        padding: "1rem 1.5rem",
-    },
 });
 
 export default function SimpleCard(prop) {

@@ -21,7 +21,7 @@ const AboutPage = () => (
     >
     <AboutCard
       title="法人概要"
-      explanation="hogehoge"
+      explanation="設立趣旨や沿革をご紹介いたします。"
       link="/about/overview"
     />
     <AboutCard
