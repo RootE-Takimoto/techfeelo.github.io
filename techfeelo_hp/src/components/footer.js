@@ -17,9 +17,9 @@ const Footer = () => {
   return (
     <footer className={classes.root}>
       <ButtonGroup size="small" variant="text" color="primary">
-        <Button href={"/legacy/index"}>阿部寛ver</Button>
+        <Button href={"/legacy/index"}>Legacy ver</Button>
       </ButtonGroup>
-      <p>©2021 techfeelo All Rights Reserved.</p>
+      <p>一般社団法人 techfeelo</p>
     </footer>
   )
 }
