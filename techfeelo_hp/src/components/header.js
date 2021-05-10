@@ -91,6 +91,7 @@ export default function Header() {
           </Menu>
           <Button href={"/info"} color="primary">お知らせ</Button>
           <Button href={"/report"} color="primary">活動報告</Button>
+          <Button href={"/donation"} color="primary">寄付のお願い</Button>
           <Button href={"/contact"} color="primary">お問い合わせ</Button>
         </ButtonGroup>
       </Toolbar>
