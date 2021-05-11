@@ -36,7 +36,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (result.errors) {
     reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
+      `There was an error loading your posts`,
       result.errors
     )
     return
@@ -52,9 +52,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+      const blogPostPath = `/info${post.fields.slug}`
 
       createPage({
-        path: post.fields.slug,
+        path: blogPostPath,
         component: blogPost,
         context: {
           id: post.id,
