@@ -75,15 +75,14 @@ export default function Header() {
     return (
       <Toolbar className={toolbar}>
         {techfeeloLogo}
-        <ButtonGroup>
-          <Button variant="contained" {...bindHover(popupState)} href={"/about"} color="primary">
-            techfeeloとは
-          </Button>
+        <ButtonGroup variant="text">
+          <Button color="primary" {...bindHover(popupState)} href={"/about"}>techfeeloとは</Button>
           <Menu
             {...bindMenu(popupState)}
             getContentAnchorEl={null}
             anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
             transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+            elevation='none'
           >
             <MenuItem onClick={popupState.close} component={Link} to="/about/overview">法人概要</MenuItem>
             <MenuItem onClick={popupState.close} component={Link} to="/about/greeting">代表理事挨拶</MenuItem>
@@ -171,7 +170,7 @@ export default function Header() {
 
   return (
     <header>
-      <AppBar className={header} position="static">
+      <AppBar className={header} position="static" elevation={0}>
         {mobileView ? displayMobile() : displayDesktop()}
       </AppBar>
     </header>

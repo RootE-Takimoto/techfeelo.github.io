@@ -42,6 +42,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## CC BY-SA 4.0
 - Gatsby JS - Multiple pages pulling in markdown files with different categorys
     - https://stackoverflow.com/questions/51578264/gatsby-js-multiple-pages-pulling-in-markdown-files-with-different-categorys
+    
+## CC BY-SA 3.0
+- How to disable box-shadows globally for all material-ui React components?
+    - https://stackoverflow.com/questions/34550593/how-to-disable-box-shadows-globally-for-all-material-ui-react-components
 
 ## ref
 - Gatsby のサイトを GitHub Actions で GitHub Pages にデプロイ
