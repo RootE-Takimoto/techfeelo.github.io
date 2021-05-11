@@ -1,0 +1,2 @@
+(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[850],{56:function(e,t,l){"use strict";l.r(t);var n=l(7294),a=(l(7013),l(907)),r=l(4547);t.default=function(){return n.createElement(a.Z,null,n.createElement(r.Z,{title:"Contact"}),n.createElement("h1",null,"寄付のお願い"),n.createElement("p",null,"私たちの活動には、多額の資金が必要です。",n.createElement("br",null),"そのため、活動の趣旨に賛同してくださる方から広く寄付を募っております。"))}}}]);
+//# sourceMappingURL=component---src-pages-donation-js-459202badb10b6435281.js.map
