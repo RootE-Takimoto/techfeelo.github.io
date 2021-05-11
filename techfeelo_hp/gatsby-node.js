@@ -28,6 +28,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fields {
               slug
             }
+            fields {
+              collection
+            }
           }
         }
       }
@@ -52,17 +55,33 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
-      const blogPostPath = `/info${post.fields.slug}`
+      
+      const blogPostPath = `info${post.fields.slug}`
+      const reportPostPath = `report${post.fields.slug}`
 
-      createPage({
-        path: blogPostPath,
-        component: blogPost,
-        context: {
-          id: post.id,
-          previousPostId,
-          nextPostId,
-        },
-      })
+      if(post.fields.collection == "info"){
+        createPage({
+          path: blogPostPath,
+          component: blogPost,
+          context: {
+            id: post.id,
+            previousPostId,
+            nextPostId,
+          },
+        })
+      }else if(post.fields.collection == "report"){
+        createPage({
+          path: reportPostPath,
+          component: blogPost,
+          context: {
+            id: post.id,
+            previousPostId,
+            nextPostId,
+          },
+        })
+      }
+
+      
     })
   }
 }
@@ -77,6 +96,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: `slug`,
       node,
       value,
+    })
+
+    const parent = getNode(node.parent)
+    createNodeField({
+      node,
+      name: 'collection',
+      value: parent.sourceInstanceName,
     })
   }
 }
