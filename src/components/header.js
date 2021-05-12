@@ -1,19 +1,14 @@
-import { AppBar, Toolbar, makeStyles, Button, IconButton, Drawer, MenuItem } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
 import * as React from "react"
 import { useState, useEffect } from "react";
-import { StaticImage } from "gatsby-plugin-image"
 
+import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 
 import Menu from 'material-ui-popup-state/HoverMenu'
 import { usePopupState, bindHover, bindMenu } from 'material-ui-popup-state/hooks'
 
-import { ButtonGroup } from "@material-ui/core";
-
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Collapse from '@material-ui/core/Collapse';
+import { ButtonGroup, AppBar, Toolbar, makeStyles, Button, IconButton, Drawer, MenuItem, List, ListItem, Collapse } from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 
@@ -21,15 +16,25 @@ const useStyles = makeStyles((theme) => ({
   header: {
     backgroundColor: "#ffffff",
     paddingRight: "10%",
-    paddingLeft: "5%",
-    "@media (max-width: 900px)": {
+    paddingLeft: "10%",
+    paddingTop: "1.7rem",
+    marginBottom: "2rem",
+    "@media (max-width: 1200px)": {
+      paddingRight: "3%",
+      paddingLeft: "5%",
+      paddingTop: "1rem",
+    },
+    "@media (max-width: 960px)": {
       paddingLeft: 0,
+      paddingTop: 0,
+      marginBottom: "0rem",
     },
   },
-  menuButton: {
+  groupButton: {
     fontWeight: 700,
     size: "1rem",
-    marginLeft: "2rem",
+    color: "#474a4d",
+    padding: "0.3rem 0.7rem",
   },
   toolbar: {
     display: "flex",
@@ -46,10 +51,19 @@ const useStyles = makeStyles((theme) => ({
   nested: {
     paddingLeft: theme.spacing(4),
   },
+  menu: {
+    "& .MuiPaper-root": {
+      backgroundColor: "#F5F5F5",
+      borderRadius: 0,
+    }
+  },
+  menuItem: {
+    fontSize: "0.8rem",
+  }
 }));
 
 export default function Header() {
-  const { header, logo, menuButton, toolbar, drawerContainer, root, nested } = useStyles();
+  const { header, toolbar, root, nested, menu, menuItem, groupButton } = useStyles();
 
   const [state, setState] = useState({
     mobileView: false,
@@ -74,24 +88,37 @@ export default function Header() {
   const displayDesktop = () => {
     return (
       <Toolbar className={toolbar}>
-        {techfeeloLogo}
+        <div style={{ 
+          minWidth: "7rem",
+          width: "20%",
+          margin: "0" /* 上 | 右 | 下 | 左 */
+        }}>
+          <Link to="/">
+            <StaticImage
+              src="../images/techfeelo_logo.png"
+              minWidth={300}
+              alt="techfeelo"
+            />
+          </Link>
+        </div>
         <ButtonGroup variant="text">
-          <Button color="primary" {...bindHover(popupState)} href={"/about"}>techfeeloとは</Button>
+          <Button className={groupButton} {...bindHover(popupState)} component={Link} to={"/about"}>techfeeloとは</Button>
           <Menu
             {...bindMenu(popupState)}
             getContentAnchorEl={null}
             anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
             transformOrigin={{ vertical: 'top', horizontal: 'left' }}
             elevation='none'
+            className={menu}
           >
-            <MenuItem onClick={popupState.close} component={Link} to="/about/overview">法人概要</MenuItem>
-            <MenuItem onClick={popupState.close} component={Link} to="/about/greeting">代表理事挨拶</MenuItem>
-            <MenuItem onClick={popupState.close} component={Link} to="/about/officers">役員紹介</MenuItem>
+            <MenuItem className={menuItem} onClick={popupState.close} component={Link} to="/about/overview">法人概要</MenuItem>
+            <MenuItem className={menuItem} onClick={popupState.close} component={Link} to="/about/greeting">代表理事挨拶</MenuItem>
+            <MenuItem className={menuItem} onClick={popupState.close} component={Link} to="/about/officers">役員紹介</MenuItem>
           </Menu>
-          <Button href={"/info"} color="primary">お知らせ</Button>
-          <Button href={"/report"} color="primary">活動報告</Button>
-          <Button href={"/donation"} color="primary">寄付のお願い</Button>
-          <Button href={"/contact"} color="primary">お問い合わせ</Button>
+          <Button component={Link} to={"/info"} className={groupButton}>お知らせ</Button>
+          <Button component={Link} to={"/report"} className={groupButton}>活動報告</Button>
+          <Button component={Link} to={"/donation"} className={groupButton}>寄付のお願い</Button>
+          <Button component={Link} to={"/contact"} className={groupButton}>お問い合わせ</Button>
         </ButtonGroup>
       </Toolbar>
     );
@@ -151,22 +178,20 @@ export default function Header() {
           </List>
         </Drawer>
 
-        <div>{techfeeloLogo}</div>
+        <div>
+          <div style={{ minWidth: "7rem", width: "20%", margin: "1rem 0 0.6rem 0.5rem" /* 上 | 右 | 下 | 左 */ }}>
+            <Link to="/">
+              <StaticImage
+                src="../images/techfeelo_logo.png"
+                minWidth={200}
+                alt="techfeelo"
+              />
+            </Link>
+          </div>
+        </div>
       </Toolbar>
     );
   };
-
-  const techfeeloLogo = (
-    <div style={{ minWidth: "7rem", width: "20%", margin: "0.5rem" }}>
-      <Link to="/">
-        <StaticImage
-          src="../images/techfeelo_logo.png"
-          minWidth={200}
-          alt="techfeelo"
-        />
-      </Link>
-    </div>
-  );
 
   return (
     <header>

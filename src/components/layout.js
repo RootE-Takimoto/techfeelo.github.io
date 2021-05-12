@@ -9,13 +9,10 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { makeStyles } from "@material-ui/core/styles";
-
 import Header from "./header"
 import Footer from './footer'
 
 import "./layout.css"
-import { red } from "@material-ui/core/colors";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -31,7 +28,8 @@ const Layout = ({ children }) => {
   return (
     <div
       style={{
-        backgroundColor: "#ffffff"
+        backgroundColor: "#ffffff",
+        margin: `0 auto 0`,
       }}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div

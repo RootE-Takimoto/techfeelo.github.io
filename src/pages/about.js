@@ -1,11 +1,10 @@
 import * as React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 import Box from '@material-ui/core/Box';
-import AboutCard from "./about/about-card.js"
+import AboutCard from "../components/about-card.js"
 
 const AboutPage = () => (
   <Layout>
@@ -21,7 +20,7 @@ const AboutPage = () => (
     >
     <AboutCard
       title="法人概要"
-      explanation="設立趣旨や沿革をご紹介いたします。"
+      explanation="目的や沿革などをご紹介いたします。"
       link="/about/overview"
     />
     <AboutCard

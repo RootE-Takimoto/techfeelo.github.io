@@ -4,7 +4,7 @@ import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 
 import Box from '@material-ui/core/Box';
-import ProfileCard from "./officers/profile-card.js"
+import ProfileCard from "../../components/profile-card.js"
 
 const OfficersPage = () => (
   <Layout>
@@ -38,8 +38,8 @@ const OfficersPage = () => (
       <ProfileCard
         image="https://pbs.twimg.com/profile_images/1044227092022321152/AN1YhfM4_400x400.jpg"
         position="理事"
-        name="パコ"
-        nameRead="paco"
+        name="paco"
+        nameRead="alpaco"
         comment="アクセル"
         link="https://twitter.com/oakaw_4916"
       />
