@@ -1,2 +1,0 @@
-(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[528],{2551:function(e,t,l){"use strict";l.r(t);var a=l(7294),n=l(7013),r=l(907),c=l(4547);t.default=function(){return a.createElement(r.Z,null,a.createElement(c.Z,{title:"OverView"}),a.createElement("h1",null,"techfeelo とは"),a.createElement("p",null,"Welcome to page 2"),a.createElement(n.Link,{to:"/"},"Go back to the homepage"))}}}]);
-//# sourceMappingURL=component---src-pages-about-overview-js-50c3a1478b29eb0ec33c.js.map

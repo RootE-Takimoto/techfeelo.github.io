@@ -1,2 +1,0 @@
-(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[723],{1077:function(e,t,a){"use strict";a.r(t);var l=a(7294),n=(a(7013),a(907)),r=a(4547);t.default=function(){return l.createElement(n.Z,null,l.createElement(r.Z,{title:"Greeting"}),l.createElement("h1",null,"代表理事挨拶"),l.createElement("p",null,"代表理事のHarukaからのご挨拶です。"))}}}]);
-//# sourceMappingURL=component---src-pages-about-greeting-js-d57cfa2294a64be9b81d.js.map

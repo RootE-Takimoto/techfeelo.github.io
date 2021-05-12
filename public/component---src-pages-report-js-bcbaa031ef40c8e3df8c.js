@@ -1,2 +1,0 @@
-(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[507],{2556:function(e,t,a){"use strict";a.r(t);var l=a(7294),n=a(7013),r=a(907),u=a(4547);t.default=function(){return l.createElement(r.Z,null,l.createElement(u.Z,{title:"Report"}),l.createElement("h1",null,"活動報告"),l.createElement("p",null,"Welcome to page 2"),l.createElement(n.Link,{to:"/"},"Go back to the homepage"))}}}]);
-//# sourceMappingURL=component---src-pages-report-js-bcbaa031ef40c8e3df8c.js.map
