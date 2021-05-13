@@ -6,7 +6,6 @@ import Seo from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-
     <div style={{
       textAlign:"center",
       margin: "5rem",

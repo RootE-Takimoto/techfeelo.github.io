@@ -36,7 +36,7 @@ const Info = ({ data, location }) => {
               >
                 <header>
                   <h2>
-                    <Link to={`/info${post.fields.slug}`} itemProp="url">
+                    <Link to={`/info${post.fields.slug}`} itemProp="url"　style={{color:"steelblue"}}>
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
