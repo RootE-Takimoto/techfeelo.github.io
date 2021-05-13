@@ -15,14 +15,17 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 const useStyles = makeStyles((theme) => ({
   header: {
     backgroundColor: "#ffffff",
-    paddingRight: "10%",
-    paddingLeft: "10%",
-    paddingTop: "1.7rem",
-    marginBottom: "2rem",
+    "@media (min-width: 1200px)": {
+      paddingRight: "10%",
+      paddingLeft: "10%",
+      paddingTop: "1.7rem",
+      marginBottom: "2rem",
+    },
     "@media (max-width: 1200px)": {
       paddingRight: "3%",
       paddingLeft: "5%",
       paddingTop: "1rem",
+      marginBottom: "2rem",
     },
     "@media (max-width: 960px)": {
       paddingLeft: 0,
@@ -106,6 +109,9 @@ export default function Header() {
               src="../images/techfeelo_logo.png"
               minWidth={300}
               alt="techfeelo"
+              quality={95}
+              formats={["AUTO", "WEBP", "AVIF"]}
+              placeholder="white"
             />
           </Link>
         </div>
