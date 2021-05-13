@@ -16,8 +16,9 @@ const OfficersPage = () => (
         width: "100%",
         display: "flex",
         frexDirection: "row",
-        flexWrap: "wrap"
+        flexWrap: "wrap",
       }}
+      justifyContent="center"
     >
       <ProfileCard
         image="https://pbs.twimg.com/profile_images/1052788598997536768/i6zl4Ycf_400x400.jpg"

@@ -12,8 +12,8 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 const useStyles = makeStyles({
     root: {
         minWidth: 250,
-        maxWidth: 275,
-        margin: 10
+        maxWidth: 300,
+        margin: 15,
     },
     media: {
         paddingTop: '100%', // アスペクト比
@@ -28,6 +28,10 @@ const useStyles = makeStyles({
     },
     pos: {
         marginBottom: 12,
+    },
+    twitter: {
+        backgroundColor: "#00acee",
+        color:"#ffffff",
     },
 });
 
@@ -55,7 +59,7 @@ export default function SimpleCard(prop) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button variant="contained" color="primary" href={prop.link}>
+                <Button variant="contained" className={classes.twitter} href={prop.link}>
                     <FontAwesomeIcon icon={faTwitter} />
                 </Button>
             </CardActions>

@@ -35,7 +35,7 @@ const Report = ({ data, location }) => {
                 itemType="http://schema.org/Article"
               >
                 <header>
-                  <h2>
+                  <h2 style={{color:"steelblue"}}>
                     <Link to={`/report${post.fields.slug}`} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>

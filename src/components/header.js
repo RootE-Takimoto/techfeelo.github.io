@@ -31,10 +31,16 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   groupButton: {
-    fontWeight: 700,
+    borderRadius: 0,
+    fontWeight: 600,
     size: "1rem",
     color: "#474a4d",
     padding: "0.3rem 0.7rem",
+    fontFamily:"source-han-sans-japanese, sans-serif",
+    textTransform: "none",
+  },
+  iconButton:{
+    color: "#474a4d" 
   },
   toolbar: {
     display: "flex",
@@ -47,6 +53,8 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
+    fontFamily:"source-han-sans-japanese, sans-serif",
+    padding: "1rem",
   },
   nested: {
     paddingLeft: theme.spacing(4),
@@ -63,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header() {
-  const { header, toolbar, root, nested, menu, menuItem, groupButton } = useStyles();
+  const { header, toolbar, root, nested, menu, menuItem, groupButton, iconButton } = useStyles();
 
   const [state, setState] = useState({
     mobileView: false,
@@ -139,9 +147,9 @@ export default function Header() {
     return (
       <Toolbar>
         <IconButton
+          className={iconButton}
           {...{
             edge: "start",
-            color: "primary",
             "aria-label": "menu",
             "aria-haspopup": "true",
             onClick: handleDrawerOpen,
@@ -168,13 +176,13 @@ export default function Header() {
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
-                <ListItem button className={nested} component={Link} to={"/about/overview"} color="primary" onClick={handleDrawerClose}>法人概要</ListItem>
-                <ListItem button className={nested} component={Link} to={"/about/greeting"} color="primary" onClick={handleDrawerClose}>代表理事挨拶</ListItem>
-                <ListItem button className={nested} component={Link} to={"/about/officers"} color="primary" onClick={handleDrawerClose}>役員紹介</ListItem>
+                <ListItem button className={nested} component={Link} to={"/about/overview"} onClick={handleDrawerClose}>法人概要</ListItem>
+                <ListItem button className={nested} component={Link} to={"/about/greeting"} onClick={handleDrawerClose}>代表理事挨拶</ListItem>
+                <ListItem button className={nested} component={Link} to={"/about/officers"} onClick={handleDrawerClose}>役員紹介</ListItem>
               </List>
             </Collapse>
-            <ListItem button component={Link} to={"/info"} color="primary" onClick={handleDrawerClose}>お知らせ</ListItem>
-            <ListItem button component={Link} to={"/report"} color="primary" onClick={handleDrawerClose}>活動報告</ListItem>
+            <ListItem button component={Link} to={"/info"} onClick={handleDrawerClose}>お知らせ</ListItem>
+            <ListItem button component={Link} to={"/report"} onClick={handleDrawerClose}>活動報告</ListItem>
           </List>
         </Drawer>
 

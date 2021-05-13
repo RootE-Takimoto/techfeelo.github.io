@@ -30,6 +30,7 @@ const Layout = ({ children }) => {
       style={{
         backgroundColor: "#ffffff",
         margin: `0 auto 0`,
+        fontFamily:"source-han-sans-japanese, sans-serif",
       }}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div

@@ -11,10 +11,13 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   groupButton: {
-    fontWeight: 700,
-    size: "1rem",
+    fontWeight: 600,
+    fontSize: "0.7rem",
     color: "#474a4d",
-    padding: "0.3rem 0.7rem",
+    padding: "0.3rem 0.5rem",
+    fontFamily:"source-han-sans-japanese, sans-serif",
+    textTransform: "none",
+    borderRadius: 0,
   },
 }));
 
@@ -22,7 +25,7 @@ const Footer = () => {
   const { root , groupButton } = useStyles();
   return (
     <footer className={root}>
-      <ButtonGroup size="small" variant="text">
+      <ButtonGroup variant="text">
         <Button href={"/legacy/index"} className={groupButton}>Legacy ver</Button>
       </ButtonGroup>
       <p style={{paddingTop:"1rem"}}>一般社団法人 techfeelo</p>
