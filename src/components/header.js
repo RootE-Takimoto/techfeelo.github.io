@@ -199,6 +199,7 @@ export default function Header() {
                 src="../images/techfeelo_logo.png"
                 minWidth={200}
                 alt="techfeelo"
+                placeholder="white"
               />
             </Link>
           </div>
