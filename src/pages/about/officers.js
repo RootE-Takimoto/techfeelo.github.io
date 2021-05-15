@@ -25,7 +25,7 @@ const OfficersPage = () => (
         position="代表理事"
         name="Haruka"
         nameRead="Haruka"
-        comment="全ての元凶"
+        comment="全ての元凶・生き急ぎ野郎"
         link="https://twitter.com/Haruka2003_exe"
       />
       <ProfileCard
@@ -49,7 +49,7 @@ const OfficersPage = () => (
         position="理事"
         name="タキモト"
         nameRead="takimoto"
-        comment="アクセル"
+        comment="広く浅く、バッテリーは燃やす"
         link="https://twitter.com/ET_RootE"
       />
       <ProfileCard
@@ -65,7 +65,7 @@ const OfficersPage = () => (
         position="監事"
         name="ナキ"
         nameRead="Naki"
-        comment="アクセル"
+        comment="巻き込まれ体質"
         link="https://twitter.com/Naki817"
       />
     </Box>
