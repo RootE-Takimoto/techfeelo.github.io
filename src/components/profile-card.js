@@ -1,17 +1,15 @@
 import React from 'react';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
+import ProfileLink from "./profile-card-button.js"
 
 const useStyles = makeStyles({
     root: {
@@ -81,11 +79,10 @@ export default function SimpleCard(prop) {
                 </Box>
             </CardContent>
             <CardActions>
-                <ThemeProvider theme={theme}>
-                    <IconButton href={prop.link} color="primary" rel="noopener noreferrer" target="_ blank" size="small" className={classes.button}>
-                        <FontAwesomeIcon icon={faTwitter} />
-                    </IconButton>
-                </ThemeProvider>
+                <ProfileLink link={prop.link1} icon={prop.link1Icon} />
+                <ProfileLink link={prop.link2} icon={prop.link2Icon} />
+                <ProfileLink link={prop.link3} icon={prop.link3Icon} />
+                <ProfileLink link={prop.link4} icon={prop.link4Icon} />
             </CardActions>
         </Card>
     );

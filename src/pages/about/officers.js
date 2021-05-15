@@ -26,7 +26,8 @@ const OfficersPage = () => (
         name="Haruka"
         nameRead="Haruka"
         comment="全ての元凶・生き急ぎ野郎"
-        link="https://twitter.com/Haruka2003_exe"
+        link1="https://twitter.com/Haruka2003_exe"
+        link1Icon="faTwitter"
       />
       <ProfileCard
         image="https://pbs.twimg.com/profile_images/1114222817304690688/LweKw10r_400x400.jpg"
@@ -34,7 +35,8 @@ const OfficersPage = () => (
         name="ごちうま"
         nameRead="gochiuma"
         comment="限界留年オタク"
-        link="https://twitter.com/gochi_uma"
+        link1="https://twitter.com/gochi_uma"
+        link1Icon="faTwitter"
       />
       <ProfileCard
         image="https://pbs.twimg.com/profile_images/1044227092022321152/AN1YhfM4_400x400.jpg"
@@ -42,7 +44,8 @@ const OfficersPage = () => (
         name="paco"
         nameRead="alpaco"
         comment="アクセル"
-        link="https://twitter.com/oakaw_4916"
+        link1="https://twitter.com/oakaw_4916"
+        link1Icon="faTwitter"
       />
       <ProfileCard
         image="https://pbs.twimg.com/profile_images/1357368000060432393/2pEowwN9_400x400.jpg"
@@ -50,7 +53,8 @@ const OfficersPage = () => (
         name="タキモト"
         nameRead="takimoto"
         comment="広く浅く、バッテリーは燃やす"
-        link="https://twitter.com/ET_RootE"
+        link1="https://twitter.com/ET_RootE"
+        link1Icon="faTwitter"
       />
       <ProfileCard
         image="https://pbs.twimg.com/profile_images/1211164253220032512/p-QpXuwa_400x400.jpg"
@@ -58,7 +62,12 @@ const OfficersPage = () => (
         name="しょぼん"
         nameRead="syobon"
         comment="物書きっぽい猫"
-        link="https://twitter.com/syobon_pastel"
+        link1="https://twitter.com/syobon_pastel"
+        link1Icon="faTwitter"
+        link2="https://github.com/syobonpastel"
+        link2Icon="faGithub"
+        link3="https://syobon-pastel.web.app/"
+        link3Icon="faHome"
       />
       <ProfileCard
         image="https://pbs.twimg.com/profile_images/1338548542818795520/JCxXA6R3_400x400.jpg"
@@ -66,7 +75,8 @@ const OfficersPage = () => (
         name="ナキ"
         nameRead="Naki"
         comment="巻き込まれ体質"
-        link="https://twitter.com/Naki817"
+        link1="https://twitter.com/Naki817"
+        link1Icon="faTwitter"
       />
     </Box>
   </Layout >
