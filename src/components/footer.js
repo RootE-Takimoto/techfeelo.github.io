@@ -26,7 +26,7 @@ const Footer = () => {
   return (
     <footer className={root}>
       <ButtonGroup variant="text">
-        <Button href={"/legacy/index"} className={groupButton}>Legacy ver</Button>
+        <Button href={"http://legacy.techfeelo.org/"} className={groupButton}>Legacy ver</Button>
       </ButtonGroup>
       <p style={{paddingTop:"1rem"}}>一般社団法人 techfeelo</p>
     </footer>
