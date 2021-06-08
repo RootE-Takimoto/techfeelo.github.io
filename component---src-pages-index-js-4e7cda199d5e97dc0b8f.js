@@ -1,2 +1,0 @@
-(self.webpackChunktechfeelo=self.webpackChunktechfeelo||[]).push([[678],{4597:function(e,t,n){"use strict";n.r(t);var l=n(7294),r=n(6639),c=n(4251);t.default=function(){return l.createElement(r.Z,null,l.createElement(c.Z,{title:"Home"}),l.createElement("div",{style:{textAlign:"center",margin:"5rem"}},l.createElement("h1",{style:{fontSize:"2.5rem"}},"高みを目指す、あなたへ"),l.createElement("h2",{style:{fontSize:"1.5rem"}},"Dear Students Aim for Higher Goals")))}}}]);
-//# sourceMappingURL=component---src-pages-index-js-4e7cda199d5e97dc0b8f.js.map
