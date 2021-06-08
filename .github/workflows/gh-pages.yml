@@ -3,6 +3,10 @@ on:
     branches:
       - master
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   build-deploy:
     runs-on: ubuntu-18.04
