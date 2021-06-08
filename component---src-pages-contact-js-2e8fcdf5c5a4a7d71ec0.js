@@ -1,0 +1,2 @@
+(self.webpackChunktechfeelo=self.webpackChunktechfeelo||[]).push([[501],{649:function(e,t,l){"use strict";l.r(t);var n=l(7294),c=(l(5313),l(6639)),r=l(4251);t.default=function(){return n.createElement(c.Z,null,n.createElement(r.Z,{title:"Contact"}),n.createElement("h1",null,"お問い合わせ"),n.createElement("p",null,"当法人へのお問い合わせは以下のメールアドレスへお願いいたします。",n.createElement("br",null),"contact@techfeelo.org"))}}}]);
+//# sourceMappingURL=component---src-pages-contact-js-2e8fcdf5c5a4a7d71ec0.js.map
