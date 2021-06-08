@@ -55,7 +55,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build && echo 'techfeelo.org' > ./build/CNAME && gh-pages -d build"
+    "deploy": "gatsby build && echo 'techfeelo.org' > ./public/CNAME && gh-pages -d public"
   },
   "repository": {
     "type": "git",
