@@ -1,2 +1,0 @@
-(self.webpackChunktechfeelo=self.webpackChunktechfeelo||[]).push([[678],{4597:function(e,t,n){"use strict";n.r(t);var l=n(7294),r=n(6639),a=n(4251);t.default=function(){return l.createElement(r.Z,null,l.createElement(a.Z,{title:"Home"}),l.createElement("div",{style:{textAlign:"center",margin:"5rem"}},l.createElement("h1",{style:{fontSize:"2.5rem"}},"つよつよがげきつよになるために"),l.createElement("h2",{style:{fontSize:"1.5rem"}},"Tsuyotuyo ga gekitsuyo ni narutame ni")))}}}]);
-//# sourceMappingURL=component---src-pages-index-js-37068411017c0ac33bf3.js.map
