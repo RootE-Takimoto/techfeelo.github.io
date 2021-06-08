@@ -9,9 +9,7 @@ jobs:
     steps:
     - name: Deploy with gh-pages
       run: |
-        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/$techfeelo/techfeelo.github.io.git
+        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/techfeelo/techfeelo.github.io.git
         npm run deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-        
