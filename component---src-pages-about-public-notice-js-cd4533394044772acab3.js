@@ -1,0 +1,2 @@
+(self.webpackChunktechfeelo=self.webpackChunktechfeelo||[]).push([[141],{1901:function(e,t,l){"use strict";l.r(t);var n=l(7294),c=(l(5313),l(2739)),u=l(4251);t.default=function(){return n.createElement(c.Z,null,n.createElement(u.Z,{title:"決算公告"}),n.createElement("h1",null,"公告"),n.createElement("p",null,"公告は以下からご覧ください。"))}}}]);
+//# sourceMappingURL=component---src-pages-about-public-notice-js-cd4533394044772acab3.js.map
