@@ -5,12 +5,20 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.4.0] # 実行するノードバージョン
     steps:
     - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install
+      run: npm install
     - name: Deploy with gh-pages
       run: |
-        npm install -g gatsby-cli
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/techfeelo/techfeelo.github.io.git
         npm run deploy
       env:
