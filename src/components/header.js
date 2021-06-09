@@ -128,6 +128,7 @@ export default function Header() {
             <MenuItem className={menuItem} onClick={popupState.close} component={Link} to="/about/overview">法人概要</MenuItem>
             <MenuItem className={menuItem} onClick={popupState.close} component={Link} to="/about/greeting">代表理事挨拶</MenuItem>
             <MenuItem className={menuItem} onClick={popupState.close} component={Link} to="/about/officers">役員紹介</MenuItem>
+            <MenuItem className={menuItem} onClick={popupState.close} component={Link} to="/about/public_notice">公告</MenuItem>
           </Menu>
           <Button component={Link} to={"/info"} className={groupButton}>お知らせ</Button>
           <Button component={Link} to={"/report"} className={groupButton}>活動報告</Button>
@@ -185,6 +186,7 @@ export default function Header() {
                 <ListItem button className={nested} component={Link} to={"/about/overview"} onClick={handleDrawerClose}>法人概要</ListItem>
                 <ListItem button className={nested} component={Link} to={"/about/greeting"} onClick={handleDrawerClose}>代表理事挨拶</ListItem>
                 <ListItem button className={nested} component={Link} to={"/about/officers"} onClick={handleDrawerClose}>役員紹介</ListItem>
+                <ListItem button className={nested} component={Link} to={"/about/public_notice"} onClick={handleDrawerClose}>公告</ListItem>
               </List>
             </Collapse>
             <ListItem button component={Link} to={"/info"} onClick={handleDrawerClose}>お知らせ</ListItem>

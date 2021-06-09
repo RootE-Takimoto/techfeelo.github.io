@@ -33,6 +33,11 @@ const AboutPage = () => (
       explanation="一般社団法人techfeeloの役員をご紹介いたします。"
       link="/about/officers"
     />
+    <AboutCard
+      title="公告"
+      explanation="公告はこちらに掲載しております。"
+      link="/about/public_notice"
+    />
     </Box>
   </Layout>
 )
