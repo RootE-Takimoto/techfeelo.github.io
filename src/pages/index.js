@@ -36,8 +36,8 @@ const IndexPage = ({ data, location }) => {
         textAlign: "center",
         margin: "5rem",
       }}>
-        <h1 style={{ fontSize: "2.5rem" }}>つよつよがげきつよになるために</h1>
-        <h2 style={{ fontSize: "1.5rem" }}>Tsuyotuyo ga gekitsuyo ni narutame ni</h2>
+        <h1 style={{ fontSize: "2.5rem" }}>Just Do It!</h1>
+        <h2 style={{ fontSize: "1.5rem" }}>手を動かせ。</h2>
       </div>
       <h2><Link to="/info" style={{ color: "#333333", textDecoration: "none" }}>お知らせ</Link></h2>
       <ol style={{ listStyle: `none` }}>
