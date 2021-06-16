@@ -5,6 +5,20 @@ import Seo from "../components/seo"
 
 import { Link, graphql } from "gatsby"
 
+class Slogan extends React.Component {
+  render() {
+    return (
+      <div style={{
+        textAlign: "center",
+        margin: "6rem",
+      }}>
+        <h1 style={{ fontSize: "3.5rem" }}>Just Do It!</h1>
+        <h2 style={{ fontSize: "1.5rem" }}>手を動かせ。</h2>
+      </div>
+    );
+  }
+}
+
 const IndexPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
@@ -13,13 +27,7 @@ const IndexPage = ({ data, location }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <Seo title="Home" />
-        <div style={{
-          textAlign: "center",
-          margin: "5rem",
-        }}>
-          <h1 style={{ fontSize: "2.5rem" }}>Just Do It!</h1>
-          <h2 style={{ fontSize: "1.5rem" }}>手を動かせ。</h2>
-        </div>
+        <Slogan />
         <h2>お知らせ</h2>
         <p>
           投稿が存在しません。<br />
@@ -32,13 +40,7 @@ const IndexPage = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="Home" />
-      <div style={{
-        textAlign: "center",
-        margin: "5rem",
-      }}>
-        <h1 style={{ fontSize: "2.5rem" }}>Just Do It!</h1>
-        <h2 style={{ fontSize: "1.5rem" }}>手を動かせ。</h2>
-      </div>
+      <Slogan />
       <h2><Link to="/info" style={{ color: "#333333", textDecoration: "none" }}>お知らせ</Link></h2>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
@@ -51,12 +53,12 @@ const IndexPage = ({ data, location }) => {
                 itemScope
                 itemType="http://schema.org/Article"
               >
-                  <p>
-                    {post.frontmatter.date}&emsp;
-                    <Link to={`/info${post.fields.slug}`} itemProp="url" style={{ color: "steelblue" }}>
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </p>
+                <p>
+                  {post.frontmatter.date}&emsp;
+                  <Link to={`/info${post.fields.slug}`} itemProp="url" style={{ color: "steelblue" }}>
+                    <span itemProp="headline">{title}</span>
+                  </Link>
+                </p>
               </article>
             </li>
           )
