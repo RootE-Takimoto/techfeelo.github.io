@@ -1,7 +1,7 @@
 ---
 title: 拠点の整備
 date: "2021-06-02T22:12:03.284Z"
-description: "設立しました"
+description: "拠点の整備を行いました"
 tags: ["blog"]
 author: "syobon"
 ---

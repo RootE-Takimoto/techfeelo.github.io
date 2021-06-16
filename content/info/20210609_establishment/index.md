@@ -1,8 +1,8 @@
 ---
-title: 設立
+title: 設立のお知らせ
 date: "2021-06-09T22:12:03.284Z"
-description: "設立のログ"
-tags: ["blog"]
+description: "一般社団法人techfeelo設立のお知らせ"
+tags: ["press_release"]
 author: "syobon"
 ---
-設立の時の諸々
+テスト
