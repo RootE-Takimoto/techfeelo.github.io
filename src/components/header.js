@@ -53,8 +53,8 @@ const useStyles = makeStyles((theme) => ({
     padding: "1rem 1rem",
   },
   root: {
-    width: '100%',
-    maxWidth: 360,
+    width: '350px',
+    // maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
     fontFamily:"source-han-sans-japanese, sans-serif",
     padding: "1rem",
@@ -116,7 +116,7 @@ export default function Header() {
           </Link>
         </div>
         <ButtonGroup variant="text">
-          <Button className={groupButton} {...bindHover(popupState)} component={Link} to={"/about"}>techfeeloとは</Button>
+          <Button className={groupButton} {...bindHover(popupState)} component={Link} to={"/about"}>About Us</Button>
           <Menu
             {...bindMenu(popupState)}
             getContentAnchorEl={null}
@@ -125,15 +125,15 @@ export default function Header() {
             elevation='none'
             className={menu}
           >
-            <MenuItem className={menuItem} onClick={popupState.close} component={Link} to="/about/overview">法人概要</MenuItem>
-            <MenuItem className={menuItem} onClick={popupState.close} component={Link} to="/about/greeting">代表理事挨拶</MenuItem>
-            <MenuItem className={menuItem} onClick={popupState.close} component={Link} to="/about/officers">役員紹介</MenuItem>
-            <MenuItem className={menuItem} onClick={popupState.close} component={Link} to="/about/public_notice">公告</MenuItem>
+            <MenuItem className={menuItem} onClick={popupState.close} component={Link} to="/about/overview">法人概要 / Foundation Overview</MenuItem>
+            <MenuItem className={menuItem} onClick={popupState.close} component={Link} to="/about/greeting">代表理事挨拶 / Greeting</MenuItem>
+            <MenuItem className={menuItem} onClick={popupState.close} component={Link} to="/about/officers">役員紹介 / Officers</MenuItem>
+            <MenuItem className={menuItem} onClick={popupState.close} component={Link} to="/about/public_notice">公告 / Public Announcements</MenuItem>
           </Menu>
-          <Button component={Link} to={"/info"} className={groupButton}>お知らせ</Button>
-          <Button component={Link} to={"/report"} className={groupButton}>活動報告</Button>
-          <Button component={Link} to={"/donation"} className={groupButton}>寄付のお願い</Button>
-          <Button component={Link} to={"/contact"} className={groupButton}>お問い合わせ</Button>
+          <Button component={Link} to={"/info"} className={groupButton}>Infomations</Button>
+          <Button component={Link} to={"/report"} className={groupButton}>Reports</Button>
+          <Button component={Link} to={"/donation"} className={groupButton}>Donation</Button>
+          <Button component={Link} to={"/contact"} className={groupButton}>Contact</Button>
         </ButtonGroup>
       </Toolbar>
     );
@@ -178,19 +178,21 @@ export default function Header() {
             className={root}
           >
             <ListItem button onClick={handleClick}>
-              techfeeloとは
+              About Us
               {open ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
-                <ListItem button className={nested} component={Link} to={"/about/overview"} onClick={handleDrawerClose}>法人概要</ListItem>
-                <ListItem button className={nested} component={Link} to={"/about/greeting"} onClick={handleDrawerClose}>代表理事挨拶</ListItem>
-                <ListItem button className={nested} component={Link} to={"/about/officers"} onClick={handleDrawerClose}>役員紹介</ListItem>
-                <ListItem button className={nested} component={Link} to={"/about/public_notice"} onClick={handleDrawerClose}>公告</ListItem>
+                <ListItem button className={nested} component={Link} to={"/about/overview"} onClick={handleDrawerClose}>法人概要 / Foundation Overview</ListItem>
+                <ListItem button className={nested} component={Link} to={"/about/greeting"} onClick={handleDrawerClose}>代表理事挨拶 / Greeting</ListItem>
+                <ListItem button className={nested} component={Link} to={"/about/officers"} onClick={handleDrawerClose}>役員紹介 / Officers</ListItem>
+                <ListItem button className={nested} component={Link} to={"/about/public_notice"} onClick={handleDrawerClose}>公告 / Public Announcements</ListItem>
               </List>
             </Collapse>
-            <ListItem button component={Link} to={"/info"} onClick={handleDrawerClose}>お知らせ</ListItem>
-            <ListItem button component={Link} to={"/report"} onClick={handleDrawerClose}>活動報告</ListItem>
+            <ListItem button component={Link} to={"/info"} onClick={handleDrawerClose}>Infomations</ListItem>
+            <ListItem button component={Link} to={"/report"} onClick={handleDrawerClose}>Reports</ListItem>
+            <ListItem button component={Link} to={"/donation"} onClick={handleDrawerClose}>Donation</ListItem>
+            <ListItem button component={Link} to={"/contact"} onClick={handleDrawerClose}>Contact</ListItem>
           </List>
         </Drawer>
 
