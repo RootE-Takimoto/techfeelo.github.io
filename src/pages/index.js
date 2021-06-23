@@ -12,8 +12,17 @@ class Slogan extends React.Component {
         textAlign: "center",
         margin: "6rem",
       }}>
-        <h1 style={{ fontSize: "3.5rem" }}>Just Do It!</h1>
+        <h1 style={{ fontSize: "3.5rem", fontWeight: "100%" }}>Just Do It!</h1>
         <h2 style={{ fontSize: "1.5rem" }}>手を動かせ。</h2>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/ZXsQAXx_ao0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        />
       </div>
     );
   }
