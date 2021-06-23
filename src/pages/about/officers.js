@@ -34,7 +34,7 @@ const OfficersPage = () => (
         position="理事"
         name="ごちうま"
         nameRead="gochiuma"
-        comment="限界留年オタク"
+        comment="理想は高く意識は低く,手は動かす"
         link1="https://twitter.com/gochi_uma"
         link1Icon="faTwitter"
       />
