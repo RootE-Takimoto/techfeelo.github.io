@@ -36,7 +36,6 @@ const Slogan = () => {
         <h1 style={{ fontSize: "3.5rem", fontWeight: "100%" }}>Just Do It!</h1>
         <h2 style={{ fontSize: "1.5rem" }}>手を動かせ。</h2>
       </div>
-      {colmunLength}
       <JustDoIt setWidth={movieWidth} setHeight={movieHeight} />
     </div>
   )
