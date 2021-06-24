@@ -7,50 +7,47 @@ import { Link, graphql } from "gatsby"
 
 import useMedia from 'use-media';
 
-class Slogan extends React.Component {
-  render() {
-    return (
-      <dev>
-        <div style={{
-          textAlign: "center",
-          margin: "6rem",
-        }}>
-          <h1 style={{ fontSize: "3.5rem", fontWeight: "100%" }}>Just Do It!</h1>
-          <h2 style={{ fontSize: "1.5rem" }}>手を動かせ。</h2>
-        </div>
-      </dev>
-    );
+const Slogan = () => {
+  // https://qiita.com/hbsnow/items/2cc10ddb249d3d21c691
+  const mediaQuery = Object.freeze({
+    xs: '(min-width: 360px)',
+    sm: '(min-width: 480px)',
+    md: '(min-width: 680px)',
+    lg: '(min-width: 800px)',
+  })
+  const mq = {
+    match: [
+      useMedia(mediaQuery.lg),
+      useMedia(mediaQuery.md),
+      useMedia(mediaQuery.xs),
+    ],
+    colmuns: [4, 3, 2],
   }
-}
+  const colmunIndex = mq.match.findIndex((_) => _)
+  const colmunLength = colmunIndex === -1 ? 1.5 : mq.colmuns[colmunIndex] // どれともマッチしない場合は1.5
+  const movieWidth = colmunLength * 160
+  const movieHeight = colmunLength * 90
+  return (
+    <div>
+      <div style={{
+        textAlign: "center",
+        margin: "6rem",
+      }}>
+        <h1 style={{ fontSize: "3.5rem", fontWeight: "100%" }}>Just Do It!</h1>
+        <h2 style={{ fontSize: "1.5rem" }}>手を動かせ。</h2>
+      </div>
+      {colmunLength}
+      <JustDoIt setWidth={movieWidth} setHeight={movieHeight} />
+    </div>
+  )
+};
 
-// class JustDoIt extends React.Component {
-//   render(setWidth) {
-//     return (
-//       <div style={{
-//         textAlign: "center",
-//         margin: "2rem",
-//       }}>
-//         <iframe
-//           width={setWidth}
-//           height={setWidth*"0.565"} // "315"
-//           object-fit="contain"
-//           src="https://www.youtube.com/embed/ZXsQAXx_ao0"
-//           title="YouTube video player"
-//           frameborder="0"
-//           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-//           // objectFit="contain"
-//           allowfullscreen
-//         />
-//       </div>
-//     );
-//   }
-// }
-
-function JustDoIt(props) {
+const JustDoIt = (props) => {
   return (
     <div style={{
       textAlign: "center",
-      margin: "2rem",
+      marginTop: "2rem",
+      marginBottom: "1rem",
     }}>
       <iframe
         width={props.setWidth}
@@ -67,15 +64,6 @@ function JustDoIt(props) {
   )
 }
 
-const Youtube = () => {
-  const isWide = useMedia({ minWidth: '960px' });
-  return (
-    <div>
-      {isWide ? <JustDoIt setWidth="560px" setHeight="315px" /> : <JustDoIt setWidth="320px" setHeight="180px" />}
-    </div>
-  );
-};
-
 const IndexPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
@@ -85,7 +73,6 @@ const IndexPage = ({ data, location }) => {
       <Layout location={location} title={siteTitle}>
         <Seo title="Home" />
         <Slogan />
-        <Youtube />
         <h2>お知らせ</h2>
         <p>
           投稿が存在しません。<br />
@@ -99,7 +86,6 @@ const IndexPage = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="Home" />
       <Slogan />
-      <Youtube />
       <h2><Link to="/info" style={{ color: "#333333", textDecoration: "none" }}>お知らせ</Link></h2>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
