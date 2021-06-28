@@ -117,7 +117,7 @@ const IndexPage = ({ data, location }) => {
           )
         })}
       </ol>
-      <Twitter />
+      {/* <Twitter /> */}
     </Layout>
   )
 }
