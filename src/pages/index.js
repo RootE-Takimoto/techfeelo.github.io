@@ -66,7 +66,7 @@ const JustDoIt = (props) => {
 const Twitter = () => {
   return (
     <div>
-      {/* https://publish.twitter.com/ */}
+      {/* https://publish.twitter.com/ gatsby developでは埋め込みが働いてくれない*/}
       <a href="https://twitter.com/techfeelo?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @techfeelo</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   )
@@ -117,7 +117,7 @@ const IndexPage = ({ data, location }) => {
           )
         })}
       </ol>
-      {/* <Twitter /> */}
+      <Twitter />
     </Layout>
   )
 }
