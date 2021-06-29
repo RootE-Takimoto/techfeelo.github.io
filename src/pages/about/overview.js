@@ -26,7 +26,7 @@ const AboutPage = () => (
             <ul>
                 <li>Purpose:&ensp;To offer the chance of learning to young people who interest in technology.</li>
                 {/* <li>設立年月日:&ensp;2021年6月2日</li> */}
-                <li>Business year::&ensp;From June 1st to the following year, May 31st</li>
+                <li>Business year:&ensp;From June 1st to the following year, May 31st</li>
                 <li>Division:&ensp;Nonprofit cooperation(A general incorporated association which CORPORATION TAX ACT of Japan, Article 2, ix-ii defines)</li>
             </ul>
         </div>
