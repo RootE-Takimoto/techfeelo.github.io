@@ -6,7 +6,17 @@ module.exports = {
     description: `一般社団法人 techfeeloの公式ホームページです。`,
     author: `@gatsbyjs`,
   },
+  siteMetadata: {
+    // If you didn't use the resolveSiteUrl option this needs to be set
+    // siteUrl: `https://techfeelo.org`,
+  },
   plugins: [
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/dev-404-page`],
+      }
+    },
     `gatsby-theme-material-ui`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
